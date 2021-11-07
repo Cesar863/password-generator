@@ -1,15 +1,44 @@
 // Assignment code here
+var placeHolder = "";
 var numbers = "0123456789";
-var capLetters = "abcdefghijklmnopqrstuvwxyz";
-var lowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var lowLetters = "abcdefghijklmnopqrstuvwxyz";
+var capLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-const passwordTxt = document.getElementById("password");
-const length = document.getElementById("length");
-const incNumbers = document.getElementById("numbers");
-const incSymbols = document.getElementById("symbols");
-const generateBtn = document.getElementById("generate");
+var passwordTxt = document.getElementById("password");
+var pwLength = document.getElementById("length");
+var pwNumbersIncluded = document.getElementById("numbers");
+var pwSpecialCharsIncluded = document.getElementById("special-characters");
+var pwCapIncluded = document.getElementById("capLetters");
+var pwLowIncluded = document.getElementById("lowLetters");
+var generateBtn = document.getElementById("generate");
 
+generateBtn.addEventListener("click",() => {
+  var characters = placeHolder;
+  pwNumbersIncluded.checked ? (characters += numbers) : "";
+  pwSpecialCharsIncluded.checked ? (characters += specialChars) : "";
+  pwCapIncluded.checked ? (characters += capLetters) : "";
+  pwLowIncluded.checked ? (characters += lowLetters) : "";
+  passwordTxt.value = generatePassword(pwLength.value, characters);
+});
+
+var generatePassword = (pwLength, characters) => {
+  var password = "";
+  for (var i = 0; i < pwLength; i++) {
+    password += characters.charAt(
+      Math.floor(Math.random()* characters.length)
+    );
+  }
+  return password;
+};
+
+var copyBtn = document.getElementById("copy");
+
+copyBtn.addEventListener("click", () => {
+  passwordTxt.select();
+  document.execCommand("copy");
+  window.alert("Password Copied");
+});
 
 //pseudo code
 
@@ -20,6 +49,8 @@ const generateBtn = document.getElementById("generate");
 // how long is the password? between 8 and 128 characters
 //restrict length
 
+
+/*
 var lengthPw = function(userInput) {
   window.prompt("Please enter a value between " + minLength + " and " + maxLength + " characters.");
   if(userInput >= minLength && userInput <= maxLength)
@@ -32,7 +63,7 @@ var lengthPw = function(userInput) {
     lengthPw();
   }
 }
-
+*/
 // does pw include lowercase
 
 //uppercase
@@ -47,8 +78,11 @@ var lengthPw = function(userInput) {
 
 //copy password
 
+
+
+
 //has to be a string
-function generatePassword() {
+/*function generatePassword() {
   lengthPw();
 }
 
@@ -65,4 +99,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); */
