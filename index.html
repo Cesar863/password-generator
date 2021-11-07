@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-          <button id="copy" class="btn">Copy Password</button>
-          <div>
-          <input type="number" id="length" min="8" max="128"/>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+      </div>
+      <div class="card-footer">
+        <button id="generate" class="btn">Generate Password</button>
+        <button id="copy" class="btn">Copy Password</button>
+
+        <div id="passlength" style="display:none;">
+          Password Length (between 8 and 128):
+          <input type="number" id="length" min="8" max="128" placeholder="Number between 0 and 128" />
+          <button id="d1">Next</button>
+        </div>
+
+        <div id="incnum" style="display:none;">
           <label for="numbers">Include Numbers</label>
           <input type="checkbox" id="numbers" />
+          <button id="d2">Next</button>
+        </div>
 
+        <div id="symbols" style="display:none;">
           <label for="symbols">Include Symbols</label>
           <input type="checkbox" id="special-characters" />
+          <button id="d3">Next</button>
+        </div>
 
-          <label for="capital-letters">Include Capital Letters</label>
-          <input type="checkbox" id="capLetters"/>
+        <div id="cap" style="display:none;">
+          <label for="capital-letters">
+            Include Capital Letters</label>
+          <input type="checkbox" id="capLetters" />
+          <button id="d4">Next</button>
+        </div>
 
+        <div id="low" style="display:none;">
           <label for="lowercase-letters">Include Lowercase Letters</label>
-          <input type="checkbox" id="lowLetters"/>
-          </div>
+          <input type="checkbox" id="lowLetters" />
+          <button id="d5">Next</button>
+        </div>
+        
+        <div id="finalgen" style="display:none;">
+          <button id="generate" class="btn">Generate Password</button>
         </div>
       </div>
     </div>
-    <script src="assets/js/script.js"></script>
-  </body>
+  </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

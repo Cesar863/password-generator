@@ -118,6 +118,14 @@ button[disabled] {
   overflow: hidden;
 }
 
+/*.options {
+  padding: 5px;
+}
+
+.options h3 {
+  font-size: 20px;
+} */
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
@@ -134,4 +142,8 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+
+  /*.options h3 {
+    font-size: 1rem;
+  } */
 }
