@@ -1,9 +1,14 @@
 // Assignment code here
-var minLength = 8;
-var maxLength = 128;
+var numbers = "0123456789";
 var capLetters = "abcdefghijklmnopqrstuvwxyz";
-var lowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var lowLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+const passwordTxt = document.getElementById("password");
+const length = document.getElementById("length");
+const incNumbers = document.getElementById("numbers");
+const incSymbols = document.getElementById("symbols");
+const generateBtn = document.getElementById("generate");
 
 
 //pseudo code
@@ -16,14 +21,15 @@ var specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 //restrict length
 
 var lengthPw = function(userInput) {
+  window.prompt("Please enter a value between " + minLength + " and " + maxLength + " characters.");
   if(userInput >= minLength && userInput <= maxLength)
   {
-    return true;
+    return window.prompt("thank you");
   }
   else
   {
-    window.alert("Please enter a value between " + minLength + " and " + maxLength + " characters.");
-    return false;
+    window.prompt("Please enter a value between " + minLength + " and " + maxLength + " characters.");
+    lengthPw();
   }
 }
 
@@ -43,7 +49,7 @@ var lengthPw = function(userInput) {
 
 //has to be a string
 function generatePassword() {
-  window.alert(lengthPw)
+  lengthPw();
 }
 
 // Get references to the #generate element
