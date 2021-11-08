@@ -51,17 +51,14 @@ genBtn.addEventListener("click", () => {
   document.getElementById("generate").style.display = "none";
 });
 
-//var userInput = parseFloat(pwLength);
-
 d1.addEventListener("click", () => {
   var userInput = document.getElementById("length").value;
-  if(isNaN(userInput) || userInput < 8 || userInput > 128) {
+  if (isNaN(userInput) || userInput < 8 || userInput > 128) {
     alert("Please enter a valid number between 8 and 128")
-  //showDiv2();
-}
-  else {
+  } else {
+    alert("If you wish to include one of the following criteria please check if box to include it or press the 'next' button to continue. You can select and deselect options later.")
     showDiv2();
-    //alert("Please enter a number between 8 and 128");
+
   }
 });
 
@@ -89,28 +86,26 @@ var pGen = function () {
 
 
 generateBtn.addEventListener("click", () => {
-  if(pwNumbersIncluded.checked == false &&
+  if (pwNumbersIncluded.checked == false &&
     pwSpecialCharsIncluded.checked == false &&
     pwCapIncluded.checked == false &&
-    pwLowIncluded.checked == false)
-    {
-      alert("Please check at least one box to generate a password")
-    }
-    else {
-  pGen();
-  alert("Here is your new password!")
-    }
+    pwLowIncluded.checked == false) {
+    alert("Please check at least one box to generate a password")
+  } else {
+    pGen();
+    alert('Your password has been generated, tap "OK" to see!')
+  }
 });
 
 var generatePassword = (pwLength, characters) => {
-    var password = "";
-    for (var i = 0; i < pwLength; i++) {
-      password += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
-    }
-    return password;
+  var password = "";
+  for (var i = 0; i < pwLength; i++) {
+    password += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
   }
+  return password;
+}
 
 var copyBtn = document.getElementById("copy");
 
@@ -119,64 +114,3 @@ copyBtn.addEventListener("click", () => {
   document.execCommand("copy");
   window.alert("Password Copied");
 });
-
-//pseudo code
-
-// click generate password button
-
-//ask the following
-
-// how long is the password? between 8 and 128 characters
-//restrict length
-
-
-/*
-var lengthPw = function(userInput) {
-  window.prompt("Please enter a value between " + minLength + " and " + maxLength + " characters.");
-  if(userInput >= minLength && userInput <= maxLength)
-  {
-    return window.prompt("thank you");
-  }
-  else
-  {
-    window.prompt("Please enter a value between " + minLength + " and " + maxLength + " characters.");
-    lengthPw();
-  }
-}
-*/
-// does pw include lowercase
-
-//uppercase
-
-//numbers
-
-//special characters
-
-//password will contain the following..
-
-//display password
-
-//copy password
-
-
-
-
-//has to be a string
-/*function generatePassword() {
-  lengthPw();
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); */
