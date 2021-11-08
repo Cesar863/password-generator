@@ -56,7 +56,7 @@ d1.addEventListener("click", () => {
   if (isNaN(userInput) || userInput < 8 || userInput > 128) {
     alert("Please enter a valid number between 8 and 128")
   } else {
-    alert("To include the the next criteria please select the check box. To omit the criteria please press 'NEXT' and the next criteria will appear.")
+    alert("To include the next criteria in your password please mark the check box. To omit the criteria from your password please press 'NEXT' and the next criteria will appear.")
     showDiv2();
 
   }
