@@ -4,6 +4,9 @@ var numbers = "0123456789";
 var lowLetters = "abcdefghijklmnopqrstuvwxyz";
 var capLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var characters = placeHolder;
+var minValue = 8;
+var maxValue = 128;
 
 var pwText = document.getElementById("password");
 var pwLength = document.getElementById("length");
@@ -39,18 +42,27 @@ function showDiv5() {
   document.getElementById("low").style.display = "block";
 }
 
-function showDiv5() {
+function showDiv6() {
   document.getElementById("finalgen").style.display = "block";
 }
 
 genBtn.addEventListener("click", () => {
   showDiv1();
   document.getElementById("generate").style.display = "none";
-
 });
 
+//var userInput = parseFloat(pwLength);
+
 d1.addEventListener("click", () => {
-  showDiv2();
+  var userInput = document.getElementById("length").value;
+  if(isNaN(userInput) || userInput < 8 || userInput > 128) {
+    alert("Please enter a valid number between 8 and 128")
+  //showDiv2();
+}
+  else {
+    showDiv2();
+    //alert("Please enter a number between 8 and 128");
+  }
 });
 
 d2.addEventListener("click", () => {
@@ -66,25 +78,39 @@ d5.addEventListener("click", () => {
   showDiv6();
 });
 
-generateBtn.addEventListener("click", () => {
+var pGen = function () {
   var characters = placeHolder;
   pwNumbersIncluded.checked ? (characters += numbers) : "";
   pwSpecialCharsIncluded.checked ? (characters += specialChars) : "";
   pwCapIncluded.checked ? (characters += capLetters) : "";
   pwLowIncluded.checked ? (characters += lowLetters) : "";
   pwText.value = generatePassword(pwLength.value, characters);
+};
+
+
+generateBtn.addEventListener("click", () => {
+  if(pwNumbersIncluded.checked == false &&
+    pwSpecialCharsIncluded.checked == false &&
+    pwCapIncluded.checked == false &&
+    pwLowIncluded.checked == false)
+    {
+      alert("Please check at least one box to generate a password")
+    }
+    else {
+  pGen();
+  alert("Here is your new password!")
+    }
 });
 
 var generatePassword = (pwLength, characters) => {
-  var password = "";
-  for (var i = 0; i < pwLength; i++) {
-    password += characters.charAt(
-      Math.floor(Math.random() * characters.length)
-    );
+    var password = "";
+    for (var i = 0; i < pwLength; i++) {
+      password += characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+    }
+    return password;
   }
-  window.alert("Here is your password!")
-  return password;
-};
 
 var copyBtn = document.getElementById("copy");
 
