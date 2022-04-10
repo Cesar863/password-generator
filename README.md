@@ -1,9 +1,29 @@
-# Cesar Martinez Password Generator
+# Password Generator
 
-## About
+### Github: https://github.com/Cesar863/password-generator
 
-### This password generator will ask a series of questions in order to help create secure passwords that will make your accounts more secure
-* the generator starts by having you click a generate password button. (/assets/images/landing-page.png)
-* After it will ask you the length of the desired password. \
-* then you will be presented with a series of check boxes with acceptable criteria that will help you generate your password. (AT LEAST ONE BOX MUST BE CHECKED) (/assets/images/citeria-selection.png)
-* A prompt will then be displayed with your new password. (assets/images/final-page.png)
+### Deployed: https://cesar863.github.io/password-generator/
+
+## Description:
+A simple web application that will ask users a series of questions to randomly generate the optimal password that fits their desired criteria.
+
+## Use:
+- Users will press `Generate Password`.
+- Users can enter a password length between 8 and 128 characters.
+- Users can choose to include numbers.
+- Users can choose to include symbols.
+- Users can choose to include capital letters.
+- Users can choose to include lowercase letters.
+- After pressing generate password a password will generate.
+
+## Screenshots:
+
+
+## Dependencies/Technologies:
+- HTML
+- CSS
+- JavaScript
+- jQuery
+
+## Created By:
+Cesar Martinez
