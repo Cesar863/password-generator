@@ -18,6 +18,7 @@ A simple web application that will ask users a series of questions to randomly g
 
 ## Screenshots:
 
+<img width="1198" alt="Screen Shot 2022-04-09 at 8 02 30 PM" src="https://user-images.githubusercontent.com/90540881/162595616-9dc9f367-9a6e-49fa-b8bf-4f561e9243d9.png">
 
 ## Dependencies/Technologies:
 - HTML
